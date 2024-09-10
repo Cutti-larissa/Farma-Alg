@@ -1,0 +1,12 @@
+Program FA1AE112;
+var
+    a:int64;
+begin
+    read(a);
+    if (a)mod(2)=0 then
+    begin
+        write('PAR');
+    end
+    else
+        write('IMPAR');
+end.
