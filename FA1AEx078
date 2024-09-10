@@ -1,0 +1,8 @@
+program FA1AE078;
+var
+    a,b:integer;
+begin
+    read(a);
+    b:= a div 1000;
+    write(b);
+end.
