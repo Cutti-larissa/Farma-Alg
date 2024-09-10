@@ -1,0 +1,7 @@
+program Falg1A098;
+var x: real;
+
+begin
+    read (x);
+    writeln ((x/3):0:2);
+end.
