@@ -1,0 +1,26 @@
+program FA05E004;
+var
+    n,d,i:integer;
+    s:real;
+begin
+    n:=1;
+    d:=2;
+    i:=0;
+    s:=0;
+    while i<10 do
+    begin
+        s:=s+(n/d);
+        if (d mod 2 = 0) then
+        begin
+            n:=d+2;
+            d:=d+1;
+        end
+        else
+        begin
+            d:=d+3;
+            n:=n+1;
+        end;
+        i:=i+1;
+    end;
+    write(s*1:0:2);
+end.
