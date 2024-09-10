@@ -1,0 +1,14 @@
+program FA03E048;
+var
+    a,b,sp,i:int64;
+begin
+    read(a,b);
+    i:=a;
+    sp:=1;
+    while i<=b do
+    begin
+        sp:=sp*i;  
+        i:=i+2;
+    end;
+    write(sp);
+end.
