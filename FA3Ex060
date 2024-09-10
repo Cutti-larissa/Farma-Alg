@@ -1,0 +1,14 @@
+program FA03E060;
+var
+    n,cont:integer;
+begin
+    read(n);
+    cont:=0;
+    while n<>0 do
+    begin
+        if n mod 10 = 7 then
+            cont:=cont+1;
+        read(n);
+    end;
+    write(cont);
+end.
