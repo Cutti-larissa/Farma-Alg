@@ -1,0 +1,50 @@
+program EqLicM;
+type 
+    vetor = array [1..200] of real;
+    matriz = array [1..200,1..200] of real;
+var
+    S,R:vetor;
+    m:matriz;
+    l,c:integer;
+
+procedure le_vetor(var x:vetor; tam:integer);
+var i:integer;
+begin
+    for i:=1 to tam do
+        read(x[i]);
+end;
+
+procedure le_matriz(var m:matriz; l,c:integer);
+var i,j:integer;
+begin
+    for i:=1 to l do
+        for j:=1 to c do
+            read(m[i,j]);
+end;
+
+function soluction(var m:matriz; var S,R:vetor; l,c:integer):boolean;
+var i,j:integer; soma:real;
+begin
+    soluction:=true;
+    for i:=1 to l do 
+    begin
+        soma:=0;
+        for j:=1 to c do
+        begin
+            soma:=soma+(m[i,j]*S[j]);
+        end;
+        if soma<>R[i] then
+            soluction:=false;
+    end;
+end;
+
+begin
+    read(l,c);
+    le_vetor(S,c);
+    le_matriz(m,l,c);
+    le_vetor(R,l);
+    if soluction(m,S,R,l,c) then
+        write('sim')
+    else
+        write('nao');
+end.
