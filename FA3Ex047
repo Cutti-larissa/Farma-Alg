@@ -1,0 +1,15 @@
+program FA3E047;
+var
+    i,a,soma:int64;
+begin
+    i:=0;
+    a:=1;
+    soma:=0;
+    while i<50 do
+    begin
+        soma:=(soma+(a*a));
+        a:=a+1;
+        i:=i+1;
+    end;
+    write(soma);
+end.
