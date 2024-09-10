@@ -1,0 +1,25 @@
+program FA1AE075;
+var 
+    a,b,c,d,e:integer;
+begin
+    read(a);
+    b:= a mod 1000;
+    if b>=100 then
+    begin
+        c:= b mod 100;
+        if c>=10 then
+        begin
+            d:= c mod 10;
+            write(d);
+        end
+        else
+            write(c);
+    end
+    else if b>=10 then
+    begin
+        e:= b mod 10;
+        write(e);
+    end
+    else
+        write(b);
+end.
