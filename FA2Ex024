@@ -1,0 +1,16 @@
+program FA2E024;
+var
+    a,b:longint;
+begin
+    read(a);
+    b:=2020-a;
+    writeln(b);
+    if b>=16 then
+        writeln('SIM')
+    else 
+        writeln('NAO');
+    if b>=18 then
+        writeln('SIM')
+    else
+        writeln('NAO');
+end.
