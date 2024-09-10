@@ -1,0 +1,14 @@
+program FA03E059;
+var
+    n,pares_posi:integer;
+begin
+    read(n);
+    pares_posi:=0;
+    while n<>0 do 
+    begin
+        if (n mod 2 = 0) and (n>0) then
+            pares_posi:=pares_posi+1;
+        read(n);
+    end;
+    write(pares_posi);
+end.
