@@ -1,0 +1,23 @@
+program FA02E020;
+var 
+    p:integer;
+    a,IMC:real;
+begin
+    read(p,a);
+    if a=0 then
+        write('ERRO')
+    else
+    begin
+        IMC:=(p/(a*a));
+        if (IMC>=18.5) and (IMC<=25) then
+            begin
+                writeln(IMC:0:2);
+                writeln('SIM');
+            end
+        else
+        begin
+            writeln(IMC:0:2);
+            writeln('NAO');
+        end;
+    end;
+end.
