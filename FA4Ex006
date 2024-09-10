@@ -1,0 +1,15 @@
+program FA04E006;
+var
+    n,i:int64;
+    vi:array[1..10] of int64;
+begin
+    read(n);
+    vi[1]:=6;
+    vi[2]:=28;
+    vi[3]:=496;
+    vi[4]:=8128;
+    vi[5]:=33550336;
+    vi[6]:=8589869056;
+    for i:=1 to n do
+        write(vi[i],' ');
+end.
