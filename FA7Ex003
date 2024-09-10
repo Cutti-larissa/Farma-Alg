@@ -1,0 +1,48 @@
+program FA07E003;
+type vetor_r = array [0..200] of real;
+var
+    vr,invertido:vetor_r;
+    n,s:integer;
+    ordenado:boolean;
+    
+function inverte_vr(var x:vetor_r; tam:integer):vetor_r;
+var
+    troca:real;
+    prim,ult:integer;
+begin
+    prim := 0;
+    ult := tam - 1;
+    while prim < ult do
+    begin
+        troca := x[prim];
+        x[prim] := x[ult];
+        x[ult] := troca;
+        prim := prim + 1;
+        ult := ult - 1;
+    end;
+    inverte_vr := x;
+end;
+
+begin
+    read(n);
+    if n=0 then
+        write('vetor vazio')
+    else
+    begin
+        ordenado:=true;
+        for s:=0 to n-1 do
+            read(vr[s]);
+        for s:=0 to n-2 do
+        begin
+            if vr[s]>vr[s+1] then
+                ordenado:=false;
+        end;
+        invertido:=inverte_vr(vr,n);
+        if ordenado then
+            writeln('sim ')
+        else
+            writeln('nao ');
+        for s:=0 to n-1 do
+            write(trunc(invertido[s]), ' ');
+    end;
+end.
