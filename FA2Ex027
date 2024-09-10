@@ -1,0 +1,16 @@
+program FA02E027;
+var
+    i,s,h:integer;
+begin
+    read(i,s,h);
+    if (i=s) and (s=h) then
+    begin
+        writeln(((i+s)/2)*h:0:2);
+        writeln('SIM');
+    end
+    else
+    begin
+        writeln(((i+s)/2)*h:0:2);
+        writeln('NAO');
+    end;
+end.
