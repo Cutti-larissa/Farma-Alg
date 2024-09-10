@@ -1,0 +1,25 @@
+program FA03E054;
+var
+    i:integer;
+    ult,pult:real;
+    polig:boolean;
+begin
+    read(pult, ult);
+    polig:=true;
+    i:=1;
+    while (ult<>0) and (pult<>0) do
+    begin
+        if pult<>ult then
+            polig:=false;
+        pult:=ult;
+        read(ult);
+        i:=i+1;
+    end;
+    if i>3 then
+        if polig then
+            write('SIM')
+        else
+            write('NAO')
+    else
+        write('NAO');
+end.
