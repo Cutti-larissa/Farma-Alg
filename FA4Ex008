@@ -1,0 +1,16 @@
+program FA04E008;
+var
+    quant, soma, ult, pult, copy:longint;
+begin
+    read(pult, ult);
+    quant:=2;
+    soma:=pult + ult;
+    while (pult*2 <> ult) and (pult/2 <> ult) do
+        begin
+            pult:=ult;
+            read(ult);
+            quant:=quant+1;
+            soma:= soma + ult;
+        end;
+    write(quant,' ', soma,' ', pult,' ', ult);
+end.
