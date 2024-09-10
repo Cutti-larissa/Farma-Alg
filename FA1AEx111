@@ -1,0 +1,10 @@
+program FA1AE111;
+var
+    a:longint;
+begin
+    read(a);
+    if (a mod 3=0) and (a mod 7=0) then
+        write('SIM')
+    else
+        write('NAO')
+end.
