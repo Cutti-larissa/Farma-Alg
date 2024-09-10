@@ -1,0 +1,22 @@
+program FA06E003;
+var n: longint;
+
+function converte_em_decimal(a:longint):longint;
+var 
+    fat, soma:longint;
+begin
+    soma:=0;
+    fat:=1;
+    while a>0 do 
+    begin
+        soma:=soma+((a mod 10)*fat);
+        a:=a div 10;
+        fat:=fat*2;
+    end;
+    converte_em_decimal:=soma;
+end;
+
+begin
+    read (n);
+    writeln (converte_em_decimal (n));
+end.
