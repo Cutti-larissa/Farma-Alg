@@ -1,0 +1,19 @@
+program FAL3E050;
+var
+    a,b,c,i,d:integer;
+begin
+    read(a, b);
+    if a mod b = 0 then
+    begin
+        c:= a div b;
+        i:= 1;
+        while (c mod b = 0) do
+        begin
+            c:= c div b;
+            i:= i+1;
+        end;
+        write(i);
+    end
+    else 
+    write(0);
+end.
