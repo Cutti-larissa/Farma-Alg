@@ -1,0 +1,19 @@
+program FA05E005;
+var
+    n,i,c,d:integer;
+    s:real;
+begin
+    n:=1;
+    d:=3;
+    i:=0;
+    s:=0;
+    while i<10 do
+    begin
+        s:=s+(n/d);
+        c:=n;
+        n:=d*2;
+        d:=c*2;
+        i:=i+1;
+    end;
+    write(s*1:0:2);
+end.
