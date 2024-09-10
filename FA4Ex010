@@ -1,0 +1,24 @@
+program FA04E010;
+var
+    n,ap,p,u,mult:int64;
+    triangulo:boolean;
+begin
+    read(n);
+    ap:=1;
+    p:=2;
+    u:=3;
+    triangulo:=false;
+    while u<((n div 2)+1) do
+    begin
+        mult:= ap * p * u;
+        if mult = n then
+            triangulo:=true;
+        ap:=p;
+        p:=u;
+        u:=u+1;
+    end;
+    if triangulo then
+        write(1)
+    else
+        write(0);
+end.
