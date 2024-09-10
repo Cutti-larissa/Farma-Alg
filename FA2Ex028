@@ -1,0 +1,21 @@
+program FA02E028;
+var
+    F:longint;
+    C:real;
+begin
+    read(F);
+    C:=(((5*F)-160)/9);
+    writeln(C:0:2);
+    if F<=32 then
+    begin
+        writeln('solido')
+    end
+    else if (F>32) and (F<212) then
+    begin
+        writeln('liquido')
+    end
+    else
+    begin
+        writeln('gasoso');
+    end;
+end.
