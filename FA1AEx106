@@ -1,0 +1,10 @@
+program FA1AE106;
+var
+    a:integer;
+begin
+    read(a);
+    if a>=0 then
+        write(a*a*a)
+    else
+        write(a*a);
+end.
