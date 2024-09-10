@@ -1,0 +1,8 @@
+program Falg1A094;
+var p,d:int64;
+
+begin
+    read (p);
+    read (d);
+    writeln (p-d);
+end.
