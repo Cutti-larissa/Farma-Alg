@@ -1,0 +1,14 @@
+program FA02E021;
+var
+    a: integer;
+begin
+    read(a);
+    if (a mod 7 = 0) and (a mod 11 = 0) then
+        write('Multiplo de 7 e de 11.')
+    else if (a mod 7 = 0) and (not(a mod 11 = 0)) then
+        write('Multiplo exclusivamente de 7.')
+    else if (not(a mod 7 = 0)) and (a mod 11 = 0) then
+        write('Multiplo exclusivamente de 11.')
+    else
+        write('Nao e multiplo nem de 7 nem de 11.');
+end.
