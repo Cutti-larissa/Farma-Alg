@@ -1,0 +1,12 @@
+Program FA1AE114;
+var 
+    a:int64;
+begin
+    read(a);
+    if (a)mod(5)=0 then
+    begin
+        write('SIM');
+    end
+    else
+        write('NAO');
+end.
