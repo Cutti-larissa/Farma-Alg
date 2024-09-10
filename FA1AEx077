@@ -1,0 +1,9 @@
+program FA1AE077;
+var 
+    a,b,c:integer;
+begin
+    read(a);
+    b:= a mod 1000;
+    c:= b div 100;
+    write(c);
+end.
