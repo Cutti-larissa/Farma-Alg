@@ -1,0 +1,16 @@
+program FA02E038;
+var
+    i:integer;
+begin
+    read(i);
+    if (i>=5) and (i<=7) then
+        write(1)
+    else if (i>=8) and (i<=10) then
+        write(2)
+    else if (i>=11) and (i<=13) then
+        write(3)
+    else if (i>=14) and (i<=17) then
+        write(4)
+    else if (i>=18) then
+        write(5);
+end.
