@@ -1,0 +1,17 @@
+program FA05E002;
+var
+    a,n,d:integer;
+    s:real;
+begin
+    read(a);
+    n:=1;
+    d:=a-1;
+    s:=0;
+    while (n<a) and (d>0) do
+    begin
+        s:=s+(n/d);
+        n:=n+1;
+        d:=d-1;
+    end;
+    write(s*1:0:2);
+end.
