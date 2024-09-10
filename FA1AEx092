@@ -1,0 +1,9 @@
+program FA1AE092;
+var p1,p2,p3:integer;
+
+begin
+    read(p1);
+    read(p2);
+    read(p3);
+    write((p1+(p2*2)+(p3*3))/6:1:0);
+end.
