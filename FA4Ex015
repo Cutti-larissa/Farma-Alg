@@ -1,0 +1,19 @@
+program FA04E015;
+var
+    n,mult,i,soma:integer;
+begin
+    read(n);
+    mult:=n*37;
+    i:=mult div 10;
+    soma:=mult mod 10;
+    while i>=10 do
+    begin
+        i:=i div 10;
+        soma:=soma+(i mod 10);
+    end;
+    soma:=soma+(i mod 10);
+    if soma = n then
+        write('SIM')
+    else
+        write('NAO');
+end.
