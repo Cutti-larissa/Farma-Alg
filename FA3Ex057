@@ -1,0 +1,28 @@
+program FA03E057;
+var
+    mult, ult, pult:int64;
+begin
+    read(pult, ult);
+    mult:=1;
+    while pult<>0 do
+    begin
+        if (pult mod 7 = 0) and (ult mod 7 = 0) then
+        begin
+            if (pult > ult) and (pult > mult) then
+                mult:= pult
+            else if (ult > pult) and (ult > mult) then
+                mult:= ult;
+        end
+        else if (pult mod 7 = 0) and (pult > mult) then
+            mult:= pult
+        else if (ult mod 7 = 0) and (ult > mult) then
+            mult:= ult;
+        pult:=ult;
+        if pult <> 0 then
+            read(ult);
+    end;
+    if mult <> 1 then
+        write(mult)
+    else 
+        write('NENHUM');
+end.
