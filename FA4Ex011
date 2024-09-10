@@ -1,0 +1,24 @@
+program FA04E011;
+var
+    divi,n:longint;
+    primo:boolean;
+begin
+    primo:=true;
+    read(n);
+    divi:= n div 2;
+    if (n mod 2 = 0) and (n<>2) or (n=0) then
+        primo:=false;
+    while (divi<>2) and (divi<>1) and (n<>0) do
+    begin
+        if (n mod divi = 0) then
+            primo:=false;
+        if (divi mod 2 = 0) then
+            divi:=divi-1
+        else
+            divi:=divi-2;
+    end;
+    if primo then
+        write('SIM')
+    else
+        write('NAO');
+end.
