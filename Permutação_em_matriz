@@ -1,0 +1,72 @@
+program permuta;
+type matriz = array [1..100,1..100] of integer;
+var
+    n:integer;
+    m:matriz;
+
+procedure le_matriz(var m:matriz; var n:integer);
+var i,j:integer;
+begin
+    read(n);
+    for i:=1 to n do
+        for j:=1 to n do 
+            read(m[i,j]);
+end;
+
+function checa(var m:matriz; n:integer):boolean;
+var i,j,conta_0,conta_1:integer; c:boolean;
+begin
+    c:=true;
+    i:=1;
+    while (i<=n) and (c) do
+    begin
+        conta_0:=0;
+        conta_1:=0;
+        j:=1;
+        while (j<=n) and (c) do
+        begin
+            if m[i,j]=0 then
+                conta_0:=conta_0+1
+            else if m[i,j]=1 then
+                conta_1:=conta_1+1
+            else
+                c:=false;
+            j:=j+1;
+        end;
+        if  (conta_0<>n-1) or (conta_1<>1) then
+            c:=false;
+        i:=i+1;
+    end;
+    if c then
+    begin
+        i:=1;
+        while (i<=n) and (c) do
+        begin
+            conta_0:=0;
+            conta_1:=0;
+            j:=1;
+            while (j<=n) and (c) do
+            begin
+                if m[i,j]=0 then
+                    conta_0:=conta_0+1
+                else if m[j,i]=1 then
+                    conta_1:=conta_1+1
+                else
+                    c:=false;
+                j:=j+1;
+            end;
+        if  (conta_0<>n-1) or (conta_1<>1) then
+            c:=false;
+        i:=i+1;
+        end;
+    end;
+    checa:=c;
+end;
+
+begin
+    le_matriz(m,n);
+    if checa(m,n) then
+        write('sim')
+    else
+        write('nao');
+end.
