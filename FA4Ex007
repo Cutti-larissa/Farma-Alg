@@ -1,0 +1,10 @@
+program FA04E007;
+var
+    a,b:integer;
+begin
+    read(a,b);
+    if (trunc(a+b)) mod 2 = 0 then
+        write('BRANCA')
+    else
+        write('PRETA');
+end.
