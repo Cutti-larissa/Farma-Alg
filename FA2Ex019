@@ -1,0 +1,13 @@
+program FA02E019;
+var
+    a,b,c:real;
+    d:integer;
+begin
+    read(a,b,c,d);
+    if (((a+b+c)/3)>=7) and (d<10) then
+        write('SIM')
+    else if (((a+b+c)/3)>=4) and (((a+b+c)/3)<7) and (d<10) then
+        write('TALVEZ')
+    else
+        write('NAO');
+end.
