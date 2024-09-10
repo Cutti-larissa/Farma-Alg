@@ -1,0 +1,11 @@
+program FA1AE119;
+var
+    k, ak, r, n, an:int64;
+begin
+    read(k);
+    read(ak);
+    read(r);
+    read(n);
+    an:= (ak + ((n-k)*r));
+    write(an);
+end.
