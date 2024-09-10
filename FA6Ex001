@@ -1,0 +1,31 @@
+program FA06E001;
+var n,m: longint;
+function contrario (x,y:integer):boolean;
+var 
+    dez,org:integer;
+begin
+    contrario:=true;
+    org:=x;
+    dez:=10;
+    while dez <= x do
+    begin
+        while x>=dez do
+        begin
+            x:= x div 10;
+        end;
+        if x mod 10 <> y mod 10 then
+        begin
+            contrario:=false;
+        end;
+        y:=y div 10;
+        x:=org;
+        dez:=dez*10;
+    end;
+end;
+begin
+read (n,m);
+if contrario (n,m) then
+writeln (n,' eh o contrario de ',m)
+else
+writeln (n,' nao eh o contrario de ',m);
+end.
