@@ -1,0 +1,24 @@
+program FA05E001;
+var
+    n,i,m,d:integer;
+    s:real;
+begin
+    read(n);
+    i:=1;
+    m:=1000;
+    d:=1;
+    s:=0;
+    if n=1 then
+        write('1000.00')
+    else
+    begin
+        while i<=n do
+        begin
+            s:=((-1)*s)+(m/d);
+            m:=m-3;
+            d:=d+1;
+            i:=i+1;
+        end;
+        write((-1)*s:0:2);
+    end;
+end.
