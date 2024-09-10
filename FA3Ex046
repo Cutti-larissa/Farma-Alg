@@ -1,0 +1,17 @@
+program FA03E046;
+var
+    a,n,d:real;
+    b:integer;
+begin
+    a:=1;
+    b:=1;
+    n:=0;
+    d:=0;
+    while (a<>0) and (b<>0) do 
+    begin
+        read(a,b);
+        n:=n+a*b;
+        d:=d+b;
+    end;
+    write((n/d):0:2);
+end.
