@@ -1,0 +1,31 @@
+program FA02E036;
+var
+    a,b:integer;
+    c:real;
+begin
+    read(a,b);
+    if a=1 then
+    begin
+        c:=b/0.2;
+        if frac(c/10)=0 then
+            writeln(trunc(c/10), ' caixas')
+        else 
+            writeln(trunc(c/10)+1, ' caixas');
+    end;
+    if a=2 then
+    begin
+        c:=b/0.3;
+        if frac(c/10)=0 then
+            writeln(trunc(c/10), ' caixas')
+        else 
+            writeln(trunc(c/10)+1, ' caixas');
+    end;
+    if a=3 then
+    begin
+        c:=b/0.4;
+        if frac(c/10)=0 then
+            writeln(trunc(c/10), ' caixas')
+        else 
+            writeln(trunc(c/10)+1, ' caixas');
+    end;
+end.
