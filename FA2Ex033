@@ -1,0 +1,14 @@
+program FA02E033;
+var 
+    nl,l:integer;
+begin
+    read(nl,l);
+    if nl=3 then
+        write('TRIANGULO ', l*3)
+    else if nl=4 then
+        write('QUADRADO ', l*l)
+    else if nl=5 then
+        write('PENTAGONO')
+    else if (nl<3) or (nl>5) then
+        write('ERRO');
+end.
