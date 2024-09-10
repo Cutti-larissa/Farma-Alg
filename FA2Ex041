@@ -1,0 +1,19 @@
+program FA02E041;
+var
+    n,i,fs,f,u,p:int64;
+begin
+    read(n);
+    p:=0;
+    u:=1;
+    i:=1;
+    fs:=0;
+    while i<n do
+    begin
+        f:=u+p;
+        fs:=fs+u;
+        p:=u;
+        u:=f;
+        i:=i+1;
+    end;
+    write(trunc(fs));
+end.
