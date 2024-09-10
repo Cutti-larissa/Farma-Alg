@@ -1,0 +1,29 @@
+program FA1AE082;
+uses SysUtils;
+var a,b,c,d: int64;
+begin
+    read(a);
+    if (a<60) then
+        begin
+            write(0, ':', 0, ':', (FloatToStr(a)));
+        end
+    else if (60<a) and (a<3600) then
+        begin
+            b:=(a)mod(60);
+            write(0,':',(FloatToStr(a div 60)), ':', (FloatToStr(b)));
+        end
+    else if (a>=3600) then
+        begin
+            c:=(a)mod(3600);
+            if (c<60) then
+                begin
+                    write((FloatToStr(a div 3600)),':',0,':',(FloatToStr(c)));
+                end
+            else
+                begin
+                    c:=(a)mod(3600);
+                    d:=(c)mod(60);
+                    write((FloatToStr(a div 3600)),':',(FloatToStr(c div 60)),':',(FloatToStr(d)));
+                end;
+            end;
+end.
