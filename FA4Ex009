@@ -1,0 +1,31 @@
+program FA04E009;
+var
+    A,B,Ta,Tb:real;
+    anos:integer;
+
+function calc_anos(menor,maior,T1,T2:real):integer;
+begin
+    calc_anos:=0;
+    while menor<maior do
+        begin
+        menor:=menor*(T1+1);
+        maior:=maior*(T2+1);
+        calc_anos:=calc_anos+1
+        end;
+end;
+
+begin
+    read(A,B,Ta,Tb);
+    if ((A<B) and (Ta<=Tb)) or ((B<A) and (Tb<=Ta)) then
+        write(0)
+    else if (A<B) and (Ta>Tb) then
+    begin
+        anos:=calc_anos(A,B,Ta,Tb);
+        write(anos);
+    end
+    else if (B<A) and (Tb>Ta) then
+    begin
+        anos:=calc_anos(B,A,Tb,Ta);
+        write(anos);
+    end;
+end.
