@@ -1,0 +1,10 @@
+program FA1AE108;
+var
+    a:longint;
+begin
+    read(a);
+    if (20<a) and (a<90) then
+        write('SIM')
+    else
+        write('NAO');
+end.
