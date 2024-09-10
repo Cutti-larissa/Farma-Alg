@@ -1,0 +1,15 @@
+program FA03E052;
+var
+    n,m,i,sm:integer;
+begin
+    read(n);
+    i:=1;
+    sm:=0;
+    while i<=n do
+    begin
+        read(m);
+        sm:=sm+m;
+        i:=i+1;
+    end;
+    write((sm/n):0:2);
+end.
