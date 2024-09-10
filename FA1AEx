@@ -1,0 +1,10 @@
+program Farmaalg1A085;
+var D,R,Rcubo: real;
+const Pi=3.14;
+
+begin
+    read (D);
+    R:= (D/2);
+    Rcubo:= (R*R*R);
+    writeln (((4*Pi/3)*Rcubo):0:2);
+end.
