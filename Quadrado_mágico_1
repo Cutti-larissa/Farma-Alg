@@ -1,0 +1,73 @@
+program quadrado_magic_1;
+type matriz = array[1..100,1..100] of integer;
+var
+    m:matriz;
+    n:integer;
+    quadrado_magic:boolean;
+
+procedure le_matriz(var m:matriz; var n:integer);
+var i,j:integer;
+begin
+    read(n);
+    for i:=1 to n do
+        for j:=1 to n do
+            read(m[i,j]);
+end;
+
+function soma(var m:matriz; n:integer):integer;
+var i,j,s:integer;
+begin
+    i:=1;
+    s:=0;
+    for j:=1 to n do
+        s:=s+m[i,j];
+    soma:=s;
+end;
+
+function checa(var m:matriz; n:integer):boolean;
+var i,j,comp,ls,cs,dps,dss:integer; c:boolean;
+begin
+    comp:=soma(m,n);
+    c:=true;
+    
+    for i:=2 to n do //soma das linhas
+    begin
+        ls:=0;
+        for j:=1 to n do
+            ls:=ls+m[i,j];
+    end;
+    
+    for i:=1 to n do //soma das colunas
+    begin
+        cs:=0;
+        for j:=1 to n do
+            cs:=cs+m[j,i];
+    end;
+
+    dps:=0; //soma diagonal principal
+    for i:=1 to n do
+        dps:=dps+m[i,i];
+        
+    dss:=0; //soma diagonal secundaria
+    i:=n;
+    j:=1;
+    while (i>=1) do
+    begin
+        dss:=dss+m[i,j];
+        i:=i-1;
+        j:=j+1;
+    end;
+    
+    if (ls<>comp) or (cs<>comp) or (dps<>comp) or (dss<>comp) then
+                c:=false;
+    checa:=c;
+end;
+
+begin
+    le_matriz(m,n);
+    quadrado_magic:=checa(m,n);
+    if quadrado_magic then
+        write('sim')
+    else
+        write('nao');
+end.
