@@ -1,0 +1,10 @@
+program FA1AE121;
+var 
+    n, a1, an, soma:int64;
+begin
+    read(n);
+    read(a1);
+    read(an);
+    soma:= ((a1+an)*n);
+    write(soma div 2);
+end.
