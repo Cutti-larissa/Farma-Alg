@@ -1,0 +1,18 @@
+program FA03E055;
+var
+    d,n,cont:longint;
+begin
+    cont:=0;
+    read(d);
+    read(n);
+    while n<>0 do
+    begin
+        if n mod 10 = d then
+            cont:=cont+1;
+        n:= n div 10;
+    end;
+    if cont<> 0 then
+        write(cont)
+    else
+        write('NAO');
+end.
