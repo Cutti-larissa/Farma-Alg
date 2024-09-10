@@ -1,0 +1,9 @@
+program E1A087;
+var a,b,c:int64;
+
+begin
+    read(a);
+    read(b);
+    c:= (a*b);
+    write(c, ' ', c*18);
+end.
