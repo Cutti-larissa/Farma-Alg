@@ -1,0 +1,187 @@
+program Damas;
+type matriz = array[1..10,1..10] of integer;
+    vetor = array [1..150] of integer;
+var
+    m:matriz;
+    t,mo,f:vetor;
+    a,b,c:integer;
+    
+procedure le_matriz(var m:matriz);
+var
+    i,j:integer;
+begin
+    for i:=1 to 8 do
+        for j:=1 to 8 do
+            read(m[i,j]);
+end;
+
+procedure mov(var m:matriz; var t,mo,f:vetor; var a,b,c:integer);
+var i,j:integer;
+begin
+    a:=1; b:=1; c:=1;
+    for i:=1 to 7 do
+        for j:=1 to 8 do 
+        begin
+            if m[i,j]=-1 then
+            begin
+                if i=1 then
+                begin
+                    if j=1 then
+                    begin
+                        if (m[i+1,j+1]=1) then
+                        begin
+                            t[a]:=i; t[a+1]:=j;
+                            a:=a+2;
+                        end
+                        else if (m[i+1,j+1]=0) then
+                        begin
+                            mo[b]:=i; mo[b+1]:=j;
+                            b:=b+2;
+                        end
+                        else if (m[i+1,j+1]=-1) then
+                        begin
+                            f[c]:=i; f[c+1]:=j;
+                            c:=c+2;
+                        end
+                    end
+                    else if j=8 then
+                    begin
+                        if (m[i+1,j-1]=1) then
+                        begin
+                            t[a]:=i; t[a+1]:=j;
+                            a:=a+2;
+                        end
+                        else if (m[i+1,j-1]=0) then
+                        begin
+                            mo[b]:=i; mo[b+1]:=j;
+                            b:=b+2;
+                        end
+                        else if (m[i+1,j-1]=-1) then
+                        begin
+                            f[c]:=i; f[c+1]:=j;
+                            c:=c+2;
+                        end
+                    end
+                    else
+                    begin
+                        if (m[i+1,j+1]=1) or (m[i+1,j-1]=1) then
+                        begin
+                            t[a]:=i; t[a+1]:=j;
+                             a:=a+2;
+                        end
+                        else if (m[i+1,j+1]=0) or (m[i+1,j-1]=0) then
+                        begin
+                            mo[b]:=i; mo[b+1]:=j;
+                            b:=b+2;
+                        end
+                        else if (m[i+1,j+1]=-1) and (m[i+1,j-1]=-1) then
+                        begin
+                            f[c]:=i; f[c+1]:=j;
+                            c:=c+2;
+                        end;
+                    end;
+                end
+                else if j=1 then
+                begin
+                    if (m[i+1,j+1]=1) or (m[i-1,j+1]=1) then
+                    begin
+                        t[a]:=i; t[a+1]:=j;
+                        a:=a+2;
+                    end
+                    else if (m[i+1,j+1]=0) or (m[i-1,j+1]=0) then
+                    begin
+                        mo[b]:=i; mo[b+1]:=j;
+                        b:=b+2;
+                    end
+                    else if (m[i+1,j+1]=-1) and (m[i-1,j+1]=-1) then
+                    begin
+                        f[c]:=i; f[c+1]:=j;
+                        c:=c+2;
+                    end;
+                end
+                else if j=8 then
+                begin
+                    if (m[i+1,j-1]=1) or (m[i-1,j-1]=1) then
+                    begin
+                        t[a]:=i; t[a+1]:=j;
+                        a:=a+2;
+                    end
+                    else if (m[i+1,j-1]=0) or (m[i-1,j-1]=0) then
+                    begin
+                        mo[b]:=i; mo[b+1]:=j;
+                        b:=b+2;
+                    end
+                    else if (m[i+1,j-1]=-1) and (m[i-1,j-1]=-1) then
+                    begin
+                        f[c]:=i; f[c+1]:=j;
+                        c:=c+2;
+                    end;
+                end
+                else 
+                    if (m[i+1,j-1]=1) or (m[i-1,j+1]=1) or (m[i-1,j-1]=1) or (m[i+1,j+1]=1) then
+                    begin
+                        t[a]:=i; t[a+1]:=j;
+                        a:=a+2;
+                    end
+                    else if (m[i+1,j-1]=0) or (m[i-1,j+1]=0) or (m[i-1,j-1]=0) or (m[i+1,j+1]=0) then
+                    begin
+                        mo[b]:=i; mo[b+1]:=j;
+                        b:=b+2;
+                    end
+                    else if (m[i+1,j-1]=-1) and (m[i+1,j+1]=-1) then
+                    begin
+                        f[c]:=i; f[c+1]:=j;
+                        c:=c+2;
+                    end;
+            end;
+        end;
+end;
+
+procedure resposta(var t,mo,f:vetor; var a,b,c:integer);
+var i:integer;
+begin
+    if a-1=0 then
+        write('tomar: 0')
+    else
+    begin
+        write('tomar: ');
+        i:=1;
+        while i<=a-2 do
+        begin
+            write(t[i],'-',t[i+1],' ');
+            i:=i+2
+        end;
+    end;
+    writeln;
+    if b-1=0 then
+        write('mover: 0')
+    else
+    begin
+        write('mover: ');
+        i:=1;
+        while i<=b-2 do
+        begin
+            write(mo[i],'-',mo[i+1],' ');
+            i:=i+2
+        end;
+    end;
+    writeln;
+    if c-1=0 then
+        write('ficar: 0')
+    else
+    begin
+        write('ficar: ');
+        i:=1;
+        while i<=c-2 do
+        begin
+            write(f[i],'-',f[i+1],' ');
+            i:=i+2
+        end;
+    end;
+end;
+
+begin
+    le_matriz(m);
+    mov(m,t,mo,f,a,b,c);
+    resposta(t,mo,f,a,b,c);
+end.
