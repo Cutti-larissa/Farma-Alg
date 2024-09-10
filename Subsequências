@@ -1,0 +1,64 @@
+program subseq;
+type vetor = array [1..100] of integer;
+var
+    v,t:vetor;
+    tam_v,tam_t,pos:integer;
+    encontrou:boolean;
+
+procedure le_vetor(var v:vetor; var tam_v:integer);
+var i:integer;
+begin
+    read(tam_v);
+    for i:=1 to tam_v do
+        read(v[i]);
+end;
+
+procedure pega_subseq(var v:vetor; pos:integer; var t:vetor; tam_t:integer);
+var 
+    i:integer;
+begin
+    for i:=1 to tam_t do
+        t[i]:=v[pos+i];
+end;
+
+function encontra_par(var v:vetor; var t:vetor; tam_t,tam_v,pos:integer):boolean;
+var 
+    i,j:integer; 
+    igual:boolean;
+begin
+    encontra_par:=false;
+    for i:=pos+tam_t to (tam_v-tam_t) do
+    begin
+        igual:=true;
+        for j:=1 to tam_t do
+            if t[j]<>v[i+j] then
+                igual:=false;
+        if igual then
+        begin
+            encontra_par:=true;
+        end;
+    end;
+end;
+
+begin
+    le_vetor(v,tam_v);
+    encontrou:=false;
+    tam_t:= tam_v div 2;
+    while (tam_t>=2) and (encontrou=false) do 
+    begin
+        pos:=0;
+        while (pos<=tam_v-tam_t+1) and (encontrou=false) do 
+        begin
+            pega_subseq(v,pos,t,tam_t);
+            if encontra_par(v,t,tam_t,tam_v,pos) then 
+            begin
+                write(pos+1,' ', tam_t);
+                encontrou:=true;
+            end;
+            pos:=pos+1;
+        end;
+        tam_t:=tam_t-1;
+    end;
+    if (encontrou=false) then
+        write('nenhuma'); 
+end.
