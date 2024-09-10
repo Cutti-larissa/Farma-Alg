@@ -1,0 +1,50 @@
+program repetir_em_matriz;
+type matriz = array [1..100,1..100] of integer;
+var
+    m,n:integer;
+    w:matriz;
+    resp:boolean;
+
+procedure le_matriz(var w:matriz; var l,c:integer);
+var i,j:integer;
+begin
+    read(l,c);
+    for i:=1 to l do
+        for j:=1 to c do
+            read(w[i,j]);
+end;
+
+function busca(var w:matriz; l,c:integer):boolean;
+var
+    i,x,y,j,comp:integer; b:boolean;
+begin
+    b:=false;
+    for i:=1 to l do
+        for j:=1 to c do
+        begin
+            comp:=w[i,j];
+            x:=1;
+            while (x<=l) and not(b) do
+            begin
+                y:=1;
+                while (y<=c) and not(b) do
+                begin
+                    if not((i=x) and (j=y)) then
+                        if comp=w[x,y] then
+                            b:=true;
+                    y:=y+1;
+                end;
+                x:=x+1;
+            end;
+        end;
+    busca:=b;
+end;
+
+begin
+    le_matriz(w,m,n);
+    resp:=busca(w,m,n);
+    if resp then
+        write('sim')
+    else
+        write('nao');
+end.
