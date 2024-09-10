@@ -1,0 +1,10 @@
+program FA1AE116;
+var
+    a:int64;
+begin
+    read(a);
+    if ((a mod 2 <> 0) and (a<-20)) or ((a mod 2 = 0) and (a>7)) then
+        write('SIM')
+    else
+        write('NAO');
+end.
