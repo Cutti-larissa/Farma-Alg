@@ -1,0 +1,10 @@
+program FA1AE113;
+var
+    a,b: real;
+begin
+    read(a, b);
+    if (b/a> 0.3) then
+        write('NAO')
+    else
+        write('SIM');
+end.
