@@ -1,0 +1,9 @@
+program Farmaalg1A088;
+var x,y,xcubo: integer;
+
+begin
+    read (x);
+    read (y);
+    xcubo:= (x*x*x);
+    writeln (xcubo + (x*y));
+end.
