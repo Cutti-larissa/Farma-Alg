@@ -1,0 +1,26 @@
+program FA02E031;
+var 
+    a:integer;
+begin
+    read(a);
+    if (a>=0) and (a<=200) then
+    begin
+        writeln(a);
+        writeln(0);
+    end;
+    if (a>=201) and (a<=400) then
+    begin
+        writeln(a);
+        writeln('20%');
+    end;
+    if (a>=401) and (a<=600) then
+    begin
+        writeln(a);
+        writeln('30%');
+    end;
+    if (a>=601) then
+    begin
+        writeln(a);
+        writeln('40%');
+    end;
+end.
