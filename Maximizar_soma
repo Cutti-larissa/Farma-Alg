@@ -1,0 +1,42 @@
+program max_soma;
+type vetor = array [1..100] of integer;
+var
+    v:vetor;
+    tam,tam_p,pos,max,soma:integer;
+    
+
+procedure le_vetor(var v:vetor; var tam:integer);
+var i:integer;
+begin
+    read(tam);
+    for i:=1 to tam do
+        read(v[i]);
+end;
+
+function s(var v:vetor; pos,tam_p:integer):integer;
+var i,so:integer;
+begin
+    so:=0;
+    for i:=1 to tam_p  do
+    begin
+        so:=so+v[pos];
+        pos:=pos+1;
+    end;
+    s:=so;
+end;
+
+begin
+    le_vetor(v,tam);
+    for tam_p:=tam downto 1 do
+    begin
+        for pos:=1 to (tam-tam_p+1) do
+        begin
+            soma:=s(v,pos,tam_p);
+            if tam_p=tam then
+                max:=soma;
+            if soma>max then
+                max:=soma;
+        end;
+    end;
+    write(max);
+end.
