@@ -1,0 +1,19 @@
+program FA04E003;
+var
+    n,n_quadrado:integer;
+    valor_quadrado:boolean;
+begin
+    valor_quadrado:=true;
+    read(n);
+    while n <> 0 do
+    begin 
+        read(n_quadrado);
+        if n_quadrado <> n*n then
+            valor_quadrado:=false;
+        read(n);
+    end;
+    if valor_quadrado then
+        write(1)
+    else
+        write(0);
+end.
