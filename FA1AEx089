@@ -1,0 +1,10 @@
+program FA1AE089;
+var a,cust,dist,imp:double;
+
+begin
+    read(a);
+    dist:=(a*28/100);
+    imp:=(a*45/100);
+    cust:=(a+dist+imp);
+    write(trunc(cust));
+end.
