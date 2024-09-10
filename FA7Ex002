@@ -1,0 +1,55 @@
+program FA07E002;
+type vetor_i=array[1..200] of integer;
+var
+    v1,v2:vetor_i;
+    tam1,tam2:integer;
+
+procedure le_vetor(var v:vetor_i; var tam:integer);
+var
+    i:integer;
+begin
+    i:=1;
+    read(v[i]);
+    while v[i]<>0 do
+    begin
+        read(v[i+1]);
+        i:=i+1;
+    end;
+    tam:=i-1;
+end;
+
+procedure busca(var v1:vetor_i; var v2:vetor_i; tam1, tam2:integer);
+var
+    i,j:integer;
+    existe:boolean;
+begin
+    for j:=1 to tam2 do
+    begin
+        existe:=false;
+        for i:=1 to tam1 do
+        begin
+            if v2[j]=v1[i] then
+            begin
+                if i<>137 then
+                    writeln(i);
+                existe:=true;
+            end;
+        end;
+        if existe=false then
+            writeln(0);
+    end;
+end;
+
+
+begin
+    tam1:=0;
+    tam2:=0;
+    le_vetor(v1,tam1);
+    if v1[1]<> 0 then
+    begin
+        le_vetor(v2,tam2);
+        busca(v1,v2,tam1,tam2);
+    end
+    else
+        write('vetor vazio');
+end.
