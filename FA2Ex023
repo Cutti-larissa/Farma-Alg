@@ -1,0 +1,12 @@
+program FA02E023;
+var 
+    a,b,c:integer;
+begin
+    read(a,b,c);
+    if (a=b) and (b=a) then
+        write('Equilatero')
+    else if (a=b) or (a=c) or (b=c) then
+        write('Isosceles')
+    else
+        write('Escaleno');
+end.
