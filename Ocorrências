@@ -1,0 +1,40 @@
+program ocorr;
+type vetor = array[0..100] of integer;
+var 
+    vp,vs:vetor;
+    n,m:integer;
+
+procedure le_vetor(var x:vetor; tam:integer);
+var i:integer;
+begin
+    for i:=1 to tam do
+        read(x[i]);
+end;
+
+function ocorre(var vp,vs:vetor; n,m:integer):integer;
+var i,j,k,cont:integer; igual:boolean;
+begin
+    i:=1; j:=m; cont:=0;
+    while j<=n do 
+    begin
+        igual:=true;
+        for k:=1 to m do 
+        begin
+            if vp[i]<>vs[k] then
+                igual:=false;
+            i:=i+1;
+        end;
+        if igual then
+            cont:=cont+1;
+        j:=j+1;
+        i:=i-m+1;
+    end;
+    ocorre:=cont;
+end;
+
+begin
+    read(n,m);
+    le_vetor(vp,n);
+    le_vetor(vs,m);
+    write(ocorre(vp,vs,n,m));
+end.
