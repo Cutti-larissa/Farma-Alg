@@ -1,0 +1,18 @@
+program FA02E030;
+var
+    a,b:integer;
+begin
+    read(a,b);
+    if a=1001 then
+        write((b*5.32):0:2);
+    if a=1324 then
+        write((b*6.45):0:2);
+    if a=6548 then
+        write((b*2.37):0:2);
+    if a=987 then
+        write((b*5.32):0:2);
+    if a=7623 then
+        write((b*6.45):0:2);
+    if (a<>1001) and (a<>1324) and (a<>6548) and (a<>987) and (a<>7623) then
+        write('ERRO')
+end.
