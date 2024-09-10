@@ -1,0 +1,10 @@
+program FA1AE122;
+var
+    n, r, a1, an:int64;
+begin
+    read(n);
+    read(r);
+    read(a1);
+    an:=(a1+((n-1)*r));
+    write(an);
+end.
