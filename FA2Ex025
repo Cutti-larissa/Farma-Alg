@@ -1,0 +1,20 @@
+program FA02E025;
+var
+    a,b,c,d:integer;
+begin
+    read(a,b,c);
+    if (c>=2021) then
+        write(0);
+    if (c<2021) then
+    begin
+        d:=2021-c;
+        if (b>4) then
+            write(d-1)
+        else if (b=4) and (a<29) then
+            write(d-1)
+        else if (b=4) and (a>=29) then
+            write(d)
+        else if (b<4) then
+            write(d);
+    end;
+end.
