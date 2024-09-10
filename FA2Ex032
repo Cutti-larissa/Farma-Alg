@@ -1,0 +1,35 @@
+program FA02E032;
+var
+    a,c:real;
+    b:longint;
+begin
+    read(a,b);
+    if b=101 then
+    begin
+        writeln(a:0:2);
+        c:= a*1.1;
+        writeln(c:0:2);
+        writeln(c-a:0:2);
+    end;
+    if b=102 then
+    begin
+        writeln(a:0:2);
+        c:=a*1.2;
+        writeln(c:0:2);
+        writeln(c-a:0:2)
+    end;
+    if b=103 then
+    begin
+        writeln(a:0:2);
+        c:=a*1.3;
+        writeln(c:0:2);
+        writeln(c-a:0:2);
+    end;
+    if (b<>101) and (b<>102) and (b<>103) then
+    begin
+        writeln(a:0:2);
+        c:=a*1.4;
+        writeln(c:0:2);
+        writeln(c-a:0:2);
+    end;
+end.
