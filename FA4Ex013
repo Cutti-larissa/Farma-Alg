@@ -1,0 +1,12 @@
+program FA04E013;
+var
+    i,j,k:integer;
+begin
+    read(i,j,k);
+    if (i+1=j) and (j+1=k) then
+        write(k,' ', j,' ', i)
+    else if (j mod i = 0) and (k mod j = 0) then
+        write(i+j+k)
+    else
+        write((i+j+k)div 3);
+end.
