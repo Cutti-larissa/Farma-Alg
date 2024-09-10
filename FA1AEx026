@@ -1,0 +1,15 @@
+program FA1AE026;
+var
+    a,b:longint;
+begin
+    read(a);
+    if a<=6 then
+    begin
+        write(100);
+    end
+    else
+    begin
+        b:= a - 3;
+        write(80+b*15);
+    end;
+end.
