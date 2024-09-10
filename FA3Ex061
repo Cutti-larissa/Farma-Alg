@@ -1,0 +1,12 @@
+program FA03E061;
+var
+    N,U:integer;
+begin
+    U:=1;
+    read(N);
+    while U<>N do
+    begin
+        writeln(U, ' ', N-U);
+        U:=U+1
+    end;
+end.
